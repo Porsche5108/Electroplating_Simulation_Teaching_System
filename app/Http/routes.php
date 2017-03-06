@@ -17,12 +17,16 @@
 Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
 
-Route::get('/', 'SessionController@create')->name('login');
+Route::get('/', 'SessionController@create');
+Route::get('login', 'SessionController@create')->name('login');
 Route::post('login', 'SessionController@store')->name('login');
 Route::delete('logout', 'SessionController@destroy')->name('logout');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
+Route::get('/users/create', 'UsersController@create')->name('users.create');
+Route::post('/users', 'UsersController@store')->name('users.store');
+Route::get('/users/home', 'UsersController@home')->name('users.home');
 Route::get('/users/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
-Route::delete('users/{id}', 'UsersController@destroy')->name('users.destroy');
+Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');

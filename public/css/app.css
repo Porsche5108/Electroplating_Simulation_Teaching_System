@@ -5731,8 +5731,11 @@ button.close {
     display: none !important; } }
 
 /* global */
-body {
-  margin: 0; }
+table th {
+  text-align: center; }
+
+table tr td {
+  text-align: center; }
 
 /* header */
 header.navbar-fixed-top {
@@ -5748,9 +5751,11 @@ header.navbar-fixed-top {
       color: #90C6FB;
       font-style: italic;
       font-size: 18px; }
-      header.navbar-fixed-top .navbar-default .navbar-left li img {
-        width: 68px;
-        height: 68px; }
+      header.navbar-fixed-top .navbar-default .navbar-left li a {
+        padding: 0px; }
+        header.navbar-fixed-top .navbar-default .navbar-left li a img {
+          width: 68px;
+          height: 68px; }
     header.navbar-fixed-top .navbar-default .navbar-right {
       margin: 23px 80px 0 0; }
       header.navbar-fixed-top .navbar-default .navbar-right li a {
@@ -5764,25 +5769,44 @@ header.navbar-fixed-top {
 
 /* content */
 .container {
-  margin: 140px auto;
-  height: 300px;
+  margin: 140px auto 0;
   padding: 0px;
-  width: 68%;
+  width: 100%;
+  height: 380px;
   background-color: inherit; }
   .container .col-md-offset-2 {
-    height: 280px; }
-  .container h3 {
+    float: none; }
+  .container h1, .container h3 {
     text-align: center; }
   .container pre {
     background-color: inherit; }
   .container p {
     text-align: center; }
 
+/* home */
+.container .top {
+  height: 15%;
+  background-color: #ccc; }
+  .container .top .col-md-11, .container .top .col-md-1 {
+    height: 100%; }
+
+.container .middle {
+  height: 70%; }
+  .container .middle .middle-left, .container .middle .middle-right {
+    background-color: #00FFFF;
+    height: 100%; }
+  .container .middle .middle-center {
+    height: 100%; }
+
+.container .bottom {
+  height: 15%;
+  background-color: #959595; }
+
 /* footer */
 footer {
   position: relative;
   clear: both;
-  margin: 60px auto 0px;
+  margin: auto;
   width: 80%;
   height: 28px; }
   footer ul li {
@@ -5804,7 +5828,7 @@ footer {
       font-size: 20px;
       color: #FFF; }
 
-.form-control {
+#signin .form-control {
   padding-left: 38px;
   border-color: #26408E; }
 
@@ -5815,5 +5839,20 @@ footer {
 #id-passwd {
   background-image: url(/images/password.jpg);
   background-repeat: no-repeat; }
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+  .users li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #E6E6FA; }
+
+.create-btn, .modify-btn, .delete-btn {
+  float: right;
+  position: relative;
+  right: 0; }
 
 /*# sourceMappingURL=app.css.map */

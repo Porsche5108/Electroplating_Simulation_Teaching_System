@@ -12605,7 +12605,13 @@ return jQuery;
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 
-$(document).ready(function () {});
+$(document).ready(function () {
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading');
+    // business logic...
+    $btn.button('reset');
+  });
+});
 
 },{"bootstrap-sass":1,"jquery":2}]},{},[3]);
 

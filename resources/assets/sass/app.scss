@@ -1,9 +1,17 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* global */
-body {
-  margin: 0;
+table {
+  th {
+    text-align: center;
+  }
+  tr {
+    td {
+      text-align: center;
+    }
+  }
 }
+
 
 /* header */
 header.navbar-fixed-top {
@@ -21,9 +29,12 @@ header.navbar-fixed-top {
         color: #90C6FB;
         font-style: italic;
         font-size: 18px;
-        img {
-          width: 68px;
-          height: 68px;
+        a {
+          padding: 0px;
+          img {
+            width: 68px;
+            height: 68px;
+          }
         }
       }
     }
@@ -54,16 +65,16 @@ header.navbar-fixed-top {
 
 /* content */
 .container {
-  margin: 140px auto;
-  height: 300px;
+  margin: 140px auto 0;
   padding: 0px;
-  width: 68%;
+  width: 100%;
+  height: 380px;
   background-color: inherit;
   .col-md-offset-2
   {
-    height: 280px;
+    float: none;
   }
-  h3 {
+  h1, h3 {
     text-align: center;
   }
   pre {
@@ -75,11 +86,37 @@ header.navbar-fixed-top {
 }
 
 
+/* home */
+.container {
+  .top {
+    height: 15%;
+    background-color: #ccc;
+    .col-md-11, .col-md-1 {
+      height: 100%;
+    }
+  }
+  .middle {
+    height: 70%;
+    .middle-left, .middle-right{
+      background-color: #00FFFF;
+      height: 100%;
+    }
+    .middle-center {
+      height: 100%;
+    }
+  }
+  .bottom {
+    height: 15%;
+    background-color: #959595;
+  }
+}
+
+
 /* footer */
 footer {
   position: relative;
   clear: both;
-  margin: 60px auto 0px;
+  margin: auto;
   width: 80%;
   height: 28px;
   ul {
@@ -112,9 +149,11 @@ footer {
   }
 }
 
-.form-control {
-  padding-left: 38px;
-  border-color: #26408E;
+#signin {
+  .form-control {
+    padding-left: 38px;
+    border-color: #26408E;
+  }
 }
 
 #id-number {
@@ -125,4 +164,24 @@ footer {
 #id-passwd {
   background-image: url(/images/password.jpg);
   background-repeat: no-repeat;
+}
+
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #E6E6FA;
+  }
+}
+
+.create-btn, .modify-btn, .delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
 }

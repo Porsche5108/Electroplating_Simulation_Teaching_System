@@ -8,13 +8,23 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Auth;
+use App\Models\User;
 
 class SessionController extends Controller
 {
     //
+    public function __construct()
+    {
+
+    }
+
+
     public function create()
     {
-        return view('sessions/create');
+        if(Auth::check())
+            return redirect()->route('users.show', [Auth::user()]);
+        else
+            return view('sessions/create');
     }
 
     public function store(Request $request)
@@ -31,19 +41,18 @@ class SessionController extends Controller
 
         if(Auth::attempt($credentials, $request->has('remember'))) {
             session()->flash('success', '欢迎回来！');
-            return redirect()->route('users.show', [Auth::user()]);
+            return redirect()->intended(route('users.show', [Auth::user()]));
         } else {
             session()->flash('danger', '很抱歉，您的帐号和密码不匹配');
             return redirect()->back();
         }
 
-        return;
     }
 
     public function destroy()
     {
         Auth::logout();
         session()->flash('success', '您已成功退出！');
-        return view('sessions/create');
+        return redirect()->route('login');
     }
 }

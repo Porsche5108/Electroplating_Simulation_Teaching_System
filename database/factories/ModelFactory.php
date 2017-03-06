@@ -15,8 +15,9 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     $date_time = $faker->date . ' ' . $faker->time;
     return [
         'name' => $faker->name,
-        'email' => str_random(5) . random_int(100,999),
+        'email' => random_int(333333,666666) . '@email.com',
         'password' => bcrypt(str_random(10)),
+        'is_admin' => false,
         'remember_token' => str_random(10),
         'created_at' => $date_time,
         'updated_at' => $date_time,
