@@ -75,7 +75,6 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'required|max:50',
             'password' => 'confirmed|min:6',
-            'password_confirmation' => 'confirmed|min:6'
         ]);
 
 
