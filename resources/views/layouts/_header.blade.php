@@ -2,11 +2,7 @@
   <nav class="navbar navbar-default">
     <ul class="nav navbar-nav navbar-left">
       <li>
-        @if (Auth::check())
         <a href="{{ route('users.home', [Auth::user()]) }}"><img src="/images/icon.ico" alt="主页" /></a>
-        @else
-        <a href="{{ route('login') }}"><img src="/images/icon.ico" alt="登录页" /></a>
-        @endif
       </li>
       <li>电镀模拟系统</li>
     </ul>

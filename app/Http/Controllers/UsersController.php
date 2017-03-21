@@ -16,7 +16,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'only' => ['show',  'edit', 'update', 'index', 'destroy', 'create', 'home']
+            'only' => ['show',  'edit', 'update', 'index', 'destroy', 'create']
         ]);
     }
 
