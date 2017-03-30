@@ -44,6 +44,13 @@
           <span>显示仿真</span>
         </button>
       </div>
+      <div class="btn-group" role="group">
+          <a id="c-sharp-editor-open-btn" type="button" class="main-btn btn disabled-first" disabled="disabled" href="{{ route('users.exercise') }}" target="_blank">
+            <img src="/images/glyphicons-151-edit.png" alt="edit your code" />
+            <span>控制算法</span>
+            <span>练习</span>
+          </a>
+      </div>
     <!--</div>-->
   </div>
   <div class="time-counter col-md-3">

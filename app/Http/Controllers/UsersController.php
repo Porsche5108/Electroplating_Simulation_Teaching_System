@@ -25,6 +25,11 @@ class UsersController extends Controller
         return view('users.home');
     }
 
+    public function exercise()
+    {
+        return view('users.exercise');
+    }
+
     public function index()
     {
         $users = User::paginate(15);
